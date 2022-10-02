@@ -5,7 +5,7 @@ Materiale per il corso _[Introduzione alle Applicazioni Web](https://github.com/
 ## Lezioni
 
 * [Introduzione al corso](./slide/00-intro.pdf)
-* [Web Architectures](./slide/01-web-architectures.pdf)
+* [Architetture Web](./slide/01-web-architectures.pdf)
 * HTML5
 * CSS3
 * ...
