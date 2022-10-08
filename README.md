@@ -8,7 +8,7 @@ Materiale per il corso _[Introduzione alle Applicazioni Web](https://github.com/
 * [Architetture Web](./slide/01-web-architectures.pdf)
 * [HTML](./slide/02-html.pdf)
   * [Esempi ed esercizi](./esercizi/02-html/)
-* [CSS3](./slide/02-css.pdf)
+* [CSS3](./slide/03-css.pdf)
   * [Esercizio](./esercizi/03-css/)
 * CSS3: aspetti avanzati
 
