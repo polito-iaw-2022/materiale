@@ -1,0 +1,17 @@
+h1 {
+  color:aquamarine;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 1rem 0;
+}
+
+#secondo-paragrafo {
+  font-size: 0.8rem;
+}
+
+.corsivo {
+  font-style: italic;
+}
+
+main > section {
+  color: green;
+}
