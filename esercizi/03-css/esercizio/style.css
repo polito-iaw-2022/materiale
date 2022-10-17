@@ -1,0 +1,47 @@
+body {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.post-img {
+  width: 25%;
+}
+
+aside {
+  float: left;
+  width: 30%;
+  margin-top: 8%;
+  background-color: aliceblue;
+}
+
+main {
+  float: right;
+  width: 65%;
+  margin-top: 8%;
+  margin-left: 1rem;
+}
+
+footer {
+  clear: both;
+}
+
+header {
+  background-color: lightskyblue;
+  position: fixed;
+  width: 100%;
+}
+
+header > div {
+  float: left;
+  width: 40%;
+}
+
+header > nav {
+  float: right;
+  width: 40%;
+}
+
+article {
+  border-color: black;
+  border-width: 2px;
+  border-style: dashed;
+}
