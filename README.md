@@ -10,11 +10,12 @@ Materiale per il corso _[Introduzione alle Applicazioni Web](https://github.com/
   * [Esempi ed esercizi](./esercizi/02-html/)
 * [CSS3](./slide/03-css.pdf)
   * [Esempi ed esercizi](./esercizi/03-css/)
-* CSS3: aspetti avanzati
+* [CSS3: aspetti avanzati](./slide/04-more-css.pdf)
+  * Esempi ed esercizi
 
 ## Laboratori
-* [Lab 1 - Primi passi con HTML5](./laboratori/lab-1-primi-passi-html.pdf)
-* [Lab 2 - Primi passi con CSS3](./laboratori/lab-2-css.pdf)
+* [Lab 1 - Primi passi con HTML5](./laboratori/lab-01/lab-1-primi-passi-html.pdf)
+* [Lab 2 - Primi passi con CSS3](./laboratori/lab-02/lab-2-css.pdf)
 * Laboratorio 3
 * Laboratorio 4
 * Laboratorio 5
