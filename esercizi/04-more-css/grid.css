@@ -1,0 +1,25 @@
+main > div, main > section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#centro {
+  grid-column: 2;
+  border: 1px solid black;
+}
+
+#sx {
+  grid-column: 1;
+  border: 1px solid black;
+}
+
+#mx {
+  grid-column: 2;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+#dx {
+  grid-column: 3;
+  border: 1px solid black;
+}

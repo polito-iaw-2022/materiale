@@ -1,0 +1,23 @@
+main > div, main > section {
+  display: flex;
+  justify-content: center;
+}
+
+#centro {
+  border: 1px solid black;
+}
+
+#sx {
+  flex: 1;
+  border: 1px solid black;
+}
+
+#mx {
+  flex: 1;
+  border: 1px solid black;
+}
+
+#dx {
+  flex: 1;
+  border: 1px solid black;
+}
