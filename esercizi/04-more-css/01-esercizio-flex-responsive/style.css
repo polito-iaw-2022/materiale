@@ -1,47 +1,43 @@
-body {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
 .post-img {
   width: 25%;
 }
 
-aside {
-  float: left;
-  width: 30%;
-  margin-top: 8%;
+header {
+  display: flex;
+  justify-content: space-between;
   background-color: aliceblue;
 }
 
-main {
-  float: right;
-  width: 65%;
-  margin-top: 8%;
-  margin-left: 1rem;
-}
-
-footer {
-  clear: both;
-}
-
-header {
-  background-color: lightskyblue;
-  position: fixed;
-  width: 100%;
-}
-
 header > div {
-  float: left;
-  width: 40%;
+  flex: 2;
+  padding-left: 1rem;
 }
 
 header > nav {
-  float: right;
-  width: 40%;
+  flex: 1;
 }
 
-article {
-  border-color: black;
-  border-width: 2px;
-  border-style: dashed;
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+aside {
+  flex: 1;
+  background-color: rgb(240, 240, 240);
+}
+
+main {
+  flex: 3;
+}
+
+@media (max-width: 600px) {
+  .container {
+    /*flex-direction: column;*/
+    display: block;
+  }
+
+  aside {
+    display: none;
+  }
 }
