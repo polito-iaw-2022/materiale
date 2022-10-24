@@ -2,57 +2,74 @@
 <html lang="it">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>IAW - Homepage</title>
     <meta name="keywords" content="web, blog, html, css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
   </head>
   <body>
     <header>
-      <div>
-        <h1>IAW Blog</h1>
-        <h2>Tutto su Introduzione alle Applicazioni Web</h2>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="home.html" title="Homepage">Home</a></li>
-          <li><a href="presentazione.html" title="Di cosa si parla">Presentazione</a></li>
-          <li><a href="contatti.html" title="Chi sono">Contatti</a></li>
-        </ul>
-        <a href="login.html" title="Entra nel sito">Login</a>
+      <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">IAW Blog</span>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Presentazione</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contatti</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </header>
-    <main>
-      <article>
-        <h3><a href="css.html" title="Post sul CSS">CSS</a></h3>
-        <p>2022-10-10</p>
-        <p><strong>Tag:</strong> <a href="#">css</a></p>
-        <p>CSS sta per Cascading Style Sheet e in questo post ne parleremo meglio.</p>
-        <img class="post-img" src="img/css.jpg" alt="CSS - Photo by Ferenc Almasi on Unsplash">
-        <p><a href="css.html#commenti" title="Commenti al post sul CSS">1 commento</a></p>
-      </article>
-    </main>
-    <aside>
-      <div>
-        <h3>I più visti del momento</h3>
-        <ul>
-          <li><a href="1.html" title="Primo post">Primo titolo</a></li>
-          <li><a href="2.html" title="Secondo post">Secondo titolo</a></li>
-          <li><a href="3.html" title="Terzo post">Terzo titolo</a></li>
-          <li><a href="4.html" title="Quarto post">Quarto titolo</a></li>
-        </ul>
+    <div class="container-fluid under-nav">
+      <div class="row">
+        <main class="col-lg-8 col-12">
+          <article>
+            <h3><a href="css.html" title="Post sul CSS">CSS</a></h3>
+            <p>2022-10-10</p>
+            <p><strong>Tag:</strong> <a href="#">css</a></p>
+            <p>CSS sta per Cascading Style Sheet e in questo post ne parleremo meglio.</p>
+            <img class="post-img" src="img/css.jpg" alt="CSS - Photo by Ferenc Almasi on Unsplash">
+            <p><a href="css.html#commenti" title="Commenti al post sul CSS">1 commento</a></p>
+          </article>
+        </main>
+        <aside class="col-lg-4 col-12">
+          <div>
+            <h3>I più visti del momento</h3>
+            <ul>
+              <li><a href="1.html" title="Primo post">Primo titolo</a></li>
+              <li><a href="2.html" title="Secondo post">Secondo titolo</a></li>
+              <li><a href="3.html" title="Terzo post">Terzo titolo</a></li>
+              <li><a href="4.html" title="Quarto post">Quarto titolo</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>I migliori commentatori</h3>
+            <ul>
+              <li><a href="p1.html" title="Primo utente">Gianni</a></li>
+              <li><a href="p2.html" title="Secondo utente">Francesco</a></li>
+              <li><a href="p3.html" title="Terzo utente">Roberta</a></li>
+            </ul>
+          </div>
+        </aside>
       </div>
-      <div>
-        <h3>I migliori commentatori</h3>
-        <ul>
-          <li><a href="p1.html" title="Primo utente">Gianni</a></li>
-          <li><a href="p2.html" title="Secondo utente">Francesco</a></li>
-          <li><a href="p3.html" title="Terzo utente">Roberta</a></li>
-        </ul>
-      </div>
-    </aside>
+    </div>
     <footer>
       <p>2022-2023 IAW - Politecnico di Torino</p>
       <!-- Inserire icone social e mail-->
       <p>Instagram</p><p><a href="mailto:test@polito.it">email</a></p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
 </html>
