@@ -19,7 +19,7 @@ Materiale per il corso _[Introduzione alle Applicazioni Web](https://github.com/
 ## Laboratori
 * [Lab 1 - Primi passi con HTML5](./laboratori/lab-01/lab-1-primi-passi-html.pdf)
 * [Lab 2 - Primi passi con CSS3](./laboratori/lab-02/lab-2-css.pdf)
-* Laboratorio 3
+* [Lab 3 - CSS avanzato](./laboratori/lab-02/lab-3-css-avanzato.pdf)
 * Laboratorio 4
 * Laboratorio 5
 * Laboratorio 6
