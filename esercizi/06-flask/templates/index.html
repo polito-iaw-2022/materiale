@@ -1,11 +1,10 @@
-<html>
-  <head>
-    <title>IAW - Home</title>
-  </head>
-  <body>
-    <h1>Blog di Introduzione alle Applicazioni Web</h1>
-    <p>Benvenuto sul blog del corso.</p>
-    <p><img src="{{ url_for('static', filename='logo.png') }}"></p>
-    <p>&copy; <a href="{{ url_for('about') }}">Introduzione alle Applicazioni Web</a></p>
-  </body>
-</html>
+{% extends "base.html" %}
+{% block title %}Blog{% endblock %}
+{% block content %}
+  <h1>Blog di Introduzione alle Applicazioni Web</h1>
+  <p>Benvenuto sul blog del corso.</p>
+  <p>
+    <img src="{{ url_for('static', filename='logo.png') }}">
+  </p>
+  <p>&copy; <a href="{{ url_for('about') }}">Introduzione alle Applicazioni Web</a></p>
+{% endblock %}

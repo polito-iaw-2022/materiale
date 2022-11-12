@@ -1,19 +1,15 @@
-<html>
-  <head>
-    <title>IAW - Sul corso</title>
-  </head>
-  <body>
-    <h1>Introduzione alle Applicazioni Web - Informazioni</h1>
-    <p>Il corso &egrave; offerto al terzo anno delle lauree in Ingegneria al Politecnico di Torino.</p>
-    <p>Questo esempio &egrave; stato creato nell'anno accademico 2022/2023.
-    </p>
-    <h2>Docenti del corso</h2>
-    <ul>
-      {# lista dei docenti #}
-      {% for docente in docenti %}
-        <li>{{ docente.name }}</li>
-      {% endfor %}
-    </ul>
-    <p><a href="{{ url_for('index') }}">Torna al blog</a></p>
-  </body>
-</html>
+{% extends "base.html" %}
+{% block title %}Sul corso{% endblock %}
+{% block content %}
+  <h1>Introduzione alle Applicazioni Web - Informazioni</h1>
+  <p>Il corso &egrave; offerto al terzo anno delle lauree in Ingegneria al Politecnico di Torino.</p>
+  <p>Questo esempio &egrave; stato creato nell'anno accademico 2022/2023.</p>
+  <hr/>
+  <h2>Docenti</h2>
+  <ul>
+  {% for teacher in docenti %}
+    <li>{{ teacher.name | e }}</li>
+  {% endfor %}
+  </ul>
+  <p><a href="{{ url_for('index') }}">Torna al blog</a></p>
+{% endblock %}
