@@ -1,17 +1,8 @@
 {% extends "base.html" %}
-{% block title %}Home{% endblock %}
-{% block home_active %}active{% endblock %}
+{% block title %}Presentazione{% endblock %}
+{% block about_active %}active{% endblock %}
 {% block content %}
-  {% for post in posts %}
-  <article>
-    <h3><a href="{{url_for('single_post', id=post.id)}}" title="Post sul {{post.title}}">{{post.title}}</a></h3>
-    <p>{{post.date}}</p>
-    <p><strong>Tag:</strong> <a href="#">{{post.tag}}</a></p>
-    <p>{{post.content}}</p>
-    <img class="post-img" src="{{ url_for('static', filename=post.title.lower()+'.jpg') }}" alt="Foto da unsplash sul {{post.title}}">
-    <p><a href="1.html#commenti" title="Commenti al post sul {{post.title}}">1 commento</a></p>
-  </article>
-  {% endfor %}
+  <p>Blog del corso di IAW - iniziato Ottobre 2022.</p>
 {% endblock %}
 
 {% block sidebar%}
