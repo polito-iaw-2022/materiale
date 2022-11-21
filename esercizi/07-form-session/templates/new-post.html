@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}New post{% endblock %}
+{% block content %}
+  <form action="/posts/new" method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label for="title" class="form-label">Titolo</label>
+      <input type="text" class="form-control" name="title" aria-describedby="Titolo del post" required minlength="3" maxlength="30">
+    </div>
+    <div class="mb-3">
+      <label for="date" class="form-label">Data</label>
+      <input type="date" class="form-control" name="date" aria-describedby="Data del post">
+    </div>
+    <div class="mb-3">
+      <label for="tag" class="form-label">Tag</label>
+      <input type="text" class="form-control" name="tag" aria-describedby="Tag del post">
+    </div>
+    <div class="mb-3">
+      <label for="content" class="form-label">Contenuto</label>
+      <textarea class="form-control" name="content" rows="3" required minlength="10"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="image" class="form-label">Immagine</label>
+      <input type="file" class="form-control" name="image" aria-describedby="Carica un'immagine">
+    </div>
+    <button type="submit" class="btn btn-primary">Crea</button>
+  </form>
+{% endblock %}
