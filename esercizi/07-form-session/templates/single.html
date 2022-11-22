@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Blog: {{post.title}}{% endblock %}
+{% block content %}
+  <article>
+    <h3>{{post.title}}</h3>
+    <p>{{post.date}}</p>
+    <p><strong>Tag:</strong> <a href="#">{{post.tag}}</a></p>
+    <p>{{post.content}}</p>
+    <img class="post-img" src="{{ url_for('static', filename=post.title.lower()+'.jpg') }}" alt="Foto da unsplash sul {{post.title}}">
+    <h4>Commenti (2)</h4>
+    <ol>
+      <li>Bellissimo post!</li>
+      <li>Concordo.</li>
+    </ol>
+  </article>
+{% endblock %}
