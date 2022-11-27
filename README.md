@@ -19,6 +19,9 @@ Materiale per il corso _[Introduzione alle Applicazioni Web](https://github.com/
   * [Esempi ed esercizio](./esercizi/06-flask/)
 * [Form e sessioni](./slide/07-forms-sessions.pdf)
   * [Esercizio](./esercizi/07-form-session/)
+* [Database in Python](./slide/08-database.pdf)
+  * [Esempi ed esercizio](./esercizi/08-database/)
+
 
 ## Laboratori
 * [Lab 1 - Primi passi con HTML5](./laboratori/lab-01/lab-1-primi-passi-html.pdf)
