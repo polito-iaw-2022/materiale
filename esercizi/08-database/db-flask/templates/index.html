@@ -9,7 +9,7 @@
     <p><strong>Tag:</strong> <a href="#">{{post.tag}}</a></p>
     <p>{{post.content}}</p>
     <img class="post-img" src="{{ url_for('static', filename=post.title.lower()+'.jpg') }}" alt="Foto da unsplash sul {{post.title}}">
-    <p><a href="1.html#commenti" title="Commenti al post sul {{post.title}}">1 commento</a></p>
+    <p><a href="{{url_for('single_post', id=post.id)}}" title="Commenti al post sul {{post.title}}">Vedi i commenti</a></p>
   </article>
   <hr/>
   {% endfor %}

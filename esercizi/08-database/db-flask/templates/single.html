@@ -7,10 +7,13 @@
     <p><strong>Tag:</strong> <a href="#">{{post.tag}}</a></p>
     <p>{{post.content}}</p>
     <img class="post-img" src="{{ url_for('static', filename=post.title.lower()+'.jpg') }}" alt="Foto da unsplash sul {{post.title}}">
-    <h4>Commenti (2)</h4>
+    {% if comments | length > 0 %}
+    <h4>Commenti</h4>
     <ol>
-      <li>Bellissimo post!</li>
-      <li>Concordo.</li>
+      {% for comment in comments %}
+        <li>{{comment.content}}</li>
+      {% endfor %}
     </ol>
+    {% endif %}
   </article>
 {% endblock %}
