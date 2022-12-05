@@ -24,10 +24,15 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto">
+                        {% if current_user.is_authenticated %}
+                        <span class="navbar-text">{{current_user.name + ' ' + current_user.surname}}</span>
+                        <a class="nav-link" href="{{ url_for('logout') }}">Esci</a>
+                        {% else %}
                         <a class="nav-link {%block signup_active %}{% endblock %}"
                             href="{{ url_for('signup') }}">Iscriviti</a>
                         <a class="nav-link {%block login_active %}{% endblock %}"
                             href="{{ url_for('login') }}">Accedi</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

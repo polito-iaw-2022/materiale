@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% block title %}Nome Cognome{% endblock %}
+{% block title %}{{current_user.name + ' ' + current_user.surname}}{% endblock %}
 
 {% block content %}
 <div class="card text-bg-light border-success border-opacity-25 rounded-0">
     <div class="card-body">
-        <h5 class="card-title">Nome Cognome</h5>
-        <p class="card-text font-monospace">mail@mail.com</p>
+        <h5 class="card-title">{{current_user.name + ' ' + current_user.surname}}</h5>
+        <p class="card-text font-monospace">{{current_user.email}}</p>
     </div>
 </div>
 {% endblock %}
