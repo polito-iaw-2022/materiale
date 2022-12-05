@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Registrati{% endblock %}
+{% block signup_active %}active{% endblock %}
+
+{% block content %}
+<div class="col-5 bg-light p-4 border rounded">
+    <form action="/iscriviti" method="POST">
+        <div class="mb-3">
+            <label for="nameInput" class="form-label">Nome</label>
+            <input type="text" class="form-control" name="name" id="nameInput">
+        </div>
+        <div class="mb-3">
+            <label for="surnameInput" class="form-label">Cognome</label>
+            <input type="text" class="form-control" name="surname" id="surnameInput">
+        </div>
+        <div class="mb-3">
+            <label for="emailInput" class="form-label">Email</label>
+            <input type="text" class="form-control" name="email" id="emailInput">
+        </div>
+        <div class="mb-3">
+            <label for="passwordInput" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="passwordInput">
+        </div>
+        <button type="submit" class="btn btn-primary">Registrati</button>
+    </form>
+</div>
+{% endblock %}

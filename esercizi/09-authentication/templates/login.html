@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Accedi{% endblock %}
+{% block login_active %}active{% endblock %}
+
+{% block content %}
+<div class="col-5 bg-light p-4 border rounded">
+    <form action="/accedi" method="POST">
+        <div class="mb-3">
+            <label for="emailInput" class="form-label">Email</label>
+            <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" name="email">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="passwordInput" class="form-label">Password</label>
+            <input type="password" class="form-control" id="passwordInput" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Accedi</button>
+    </form>
+</div>
+{% endblock %}
