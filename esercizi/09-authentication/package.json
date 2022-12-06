@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "flask": "^0.2.10",
+    "login": "^0.8.0"
+  }
+}
