@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block home_active %}active{% endblock %}
+
+{% block authentication %}
+{% if session.usrname %}
+<span class="text-light ms-4">Benvenuto, {{session.usrname}}</span>
+{% else %}
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-danger btn-sm ms-4" data-bs-toggle="modal" data-bs-target="#identifyModal">
+  Autenticati
+</button>
+<!-- Modal -->
+<div class="modal fade" id="identifyModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form action="/" method="POST">
+        <div class="modal-body">
+          <h2 class="fs-5">Dimmi chi sei</h2>
+          <select class="form-select" aria-label="Dimmi chi sei" name="usrname">
+            {% for user in users %}
+            <option value="{{user}}">{{user}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <button type="submit" class="btn btn-primary">Salva</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<aside id="myaside" class="col-lg-3 col-md-12">
+  <ul>
+    <li>
+      <a class="link-primary" href="#">Oggi</a>
+    </li>
+    <li>
+      <a class="link-primary" href="#">Questa settimana</a>
+    </li>
+    <li>
+      <a class="link-primary" href="#">Questo mese</a>
+    </li>
+  </ul>
+</aside>
+<main class="col-lg-9 col-md-12">
+  {% for post in posts %}
+  <article class="row border p-2 mx-2 my-4">
+    <div class="col-lg-3 col-md-6 col-sm-12 px-0">
+      {% if post.immagine_post %}
+      <img class="w-100 p-2" src="{{ url_for('static', filename=post.immagine_post) }}" alt="...">
+      {% endif %}
+    </div>
+    <div class="col-lg-9 col-md-6 col-sm-12">
+      <section
+        class="d-flex align-items-center mt-2 mb-4 {{'bg-warning p-2 bg-opacity-10' if session.usrname == post.nickname}}">
+        <div><img class="usrimg rounded-circle" src="{{ url_for('static', filename= post.immagine_profilo ) }}"
+            alt="Questa è l'immagine dell'utente {{ post.nickname |e }}"></div>
+        <div>
+          <h4 class="username">{{ post.nickname |e }}</h4>
+        </div>
+        <div class="flex-grow-1 text-end">
+          <p>{{ post.data_pubblicazione |e }}</p>
+        </div>
+      </section>
+      <p>{{ post.testo |e }}</p>
+      <a href="{{url_for('single_post', id=post.id)}}" type="button" class="btn btn-primary btn-sm">Visualizza</a>
+    </div>
+  </article>
+  {% endfor %}
+</main>
+{% if session.usrname %}
+<button type="button" class="mybutton" data-bs-toggle="modal" data-bs-target="#createModal">
+  +
+</button>
+<div class="modal fade" id="createModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Crea un nuovo post!</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="/posts/new" method="POST" enctype="multipart/form-data">
+        <div class="modal-body">
+          <fieldset disabled>
+            <div class="mb-3">
+              <label for="usrnameTextInput" class="form-label">Username</label>
+              <input type="text" id="usrnameTextInput" name="usrname" class="form-control" value="{{session.usrname}}">
+            </div>
+          </fieldset>
+          <div class="mb-3">
+            <label for="postTextarea" class="form-label">Cosa c'è di nuovo?</label>
+            <textarea class="form-control" id="postTextarea" name="testo" rows="3"
+              placeholder="Inserisci un testo per il tuo post" required minlength="30" maxlength="200"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="imageFile" class="form-label">Aggiungi un'immagine, se vuoi!</label>
+            <input class="form-control" name="immagine_post" type="file" id="imageFile">
+          </div>
+          <div class="mb-3">
+            <label for="dateTextInput" class="form-label">Seleziona una data</label>
+            <input class="form-control" type="date" name="data_pubblicazione" id="dateTextInput" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <button type="submit" class="btn btn-primary">Crea Post</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
