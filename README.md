@@ -21,15 +21,21 @@ Materiale per il corso _[Introduzione alle Applicazioni Web](https://github.com/
   * [Esercizio](./esercizi/07-form-session/)
 * [Database in Python](./slide/08-database.pdf)
   * [Esempi ed esercizio](./esercizi/08-database/)
+* [Autenticazione](./slide/09-authentication.pdf)
+  * [Esercizio](./esercizi/09-authentication)
+* [Introduzione a Javascript](./slide/10-javascript-basics.pdf)
 
 
 ## Laboratori
 * [Lab 1 - Primi passi con HTML5](./laboratori/lab-01/lab-1-primi-passi-html.pdf)
 * [Lab 2 - Primi passi con CSS3](./laboratori/lab-02/lab-2-css.pdf)
 * [Lab 3 - CSS avanzato](./laboratori/lab-03/lab-3-css-avanzato.pdf)
-* Laboratorio 4
-* Laboratorio 5
-* Laboratorio 6
+* [Laboratorio 4](./laboratori/lab-04/lab-4-bootstrap.pdf)
+* [Laboratorio 5](./laboratori/lab-05/lab-5-flask.pdf)
+* [Laboratorio 6](./laboratori/lab-06/lab-6-flask-avanzato.pdf)
+* [Laboratorio 7](./laboratori/lab-07/lab-7-form.pdf)
+* [Laboratorio 8](./laboratori/lab-08/lab-8-database.pdf)
+* [Laboratorio 10](./laboratori/lab-09/lab-9-authentication.pdf)
 
 ## Software utilizzato
 * Python 3.10
