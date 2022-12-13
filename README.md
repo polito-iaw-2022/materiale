@@ -35,7 +35,8 @@ Materiale per il corso _[Introduzione alle Applicazioni Web](https://github.com/
 * [Laboratorio 6](./laboratori/lab-06/lab-6-flask-avanzato.pdf)
 * [Laboratorio 7](./laboratori/lab-07/lab-7-form.pdf)
 * [Laboratorio 8](./laboratori/lab-08/lab-8-database.pdf)
-* [Laboratorio 10](./laboratori/lab-09/lab-9-authentication.pdf)
+* [Laboratorio 9](./laboratori/lab-09/lab-9-authentication.pdf)
+* [Laboratorio 10](./laboratori/lab-10/lab-10-javascript.pdf)
 
 ## Software utilizzato
 * Python 3.10
