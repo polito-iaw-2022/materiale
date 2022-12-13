@@ -24,6 +24,8 @@ Materiale per il corso _[Introduzione alle Applicazioni Web](https://github.com/
 * [Autenticazione](./slide/09-authentication.pdf)
   * [Esercizio](./esercizi/09-authentication)
 * [Introduzione a Javascript](./slide/10-javascript-basics.pdf)
+* [JavaScript nel browser](./slide/11-javascript-browser.pdf)
+  * [Esempi ed esercizio](./esercizi/11-javascript-browser/)
 
 
 ## Laboratori
@@ -37,6 +39,8 @@ Materiale per il corso _[Introduzione alle Applicazioni Web](https://github.com/
 * [Laboratorio 8](./laboratori/lab-08/lab-8-database.pdf)
 * [Laboratorio 9](./laboratori/lab-09/lab-9-authentication.pdf)
 * [Laboratorio 10](./laboratori/lab-10/lab-10-javascript.pdf)
+* Laboratorio 11
+* Laboratorio 12
 
 ## Software utilizzato
 * Python 3.10
