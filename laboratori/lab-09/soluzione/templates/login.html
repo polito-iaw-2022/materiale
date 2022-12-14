@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Accedi{% endblock %}
+{% block login_active %}active{% endblock %}
+
+{% block content %}
+<div class="col-5 bg-light p-4 border rounded">
+    <form action="/accedi" method="POST">
+        <label for="nicknameInput" class="form-label">Nickname</label>
+        <div class="input-group mb-3">
+            <span class="input-group-text">@</span>
+            <input type="text" class="form-control" name="nickname" id="nicknameInput">
+        </div>
+
+        <div class="mb-3">
+            <label for="passwordInput" class="form-label">Password</label>
+            <input type="password" class="form-control" id="passwordInput" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Accedi</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Post by {{post.usrname}}{% endblock %}
+{% block home_active %}active{% endblock %}
+
+{% block content %}
+<main class="col-lg-9 col-md-12">
+  <div class="p-2 mx-2 text-end">
+    <a href="{{url_for('home')}}" type="button" class="btn btn-primary btn-sm">Home</a>
+  </div>
+  <article class="row border p-2 mx-2 my-4">
+    <div class="col-lg-3 col-md-6 col-sm-12 px-0">
+      {% if post.immagine_post %}
+      <img class="w-100 p-2" src="{{ url_for('static', filename=post.immagine_post) }}" alt="...">
+      {% endif %}
+    </div>
+    <div class="col-lg-9 col-md-6 col-sm-12">
+      <section class="d-flex align-items-center mt-2 mb-4">
+        <div>{% if post.immagine_profilo %}<img class="usrimg rounded-circle"
+            src="{{ url_for('static', filename= post.immagine_profilo ) }}"
+            alt="Questa è l'immagine dell'utente {{ post.nickname |e }}">{% endif %}</div>
+        <div>
+          <h4 class="username">{{ post.nickname |e }}</h4>
+        </div>
+        <div class="flex-grow-1 text-end">
+          <p>{{ post.data_pubblicazione |e }}</p>
+        </div>
+      </section>
+      <p>{{ post.testo |e }}</p>
+    </div>
+
+    {% for comment in comments %}
+    <hr class="border">
+    <div class="col-lg-12 col-md-9 col-sm-12">
+      <section class="d-flex align-items-top mt-2 mb-4">
+        <div>{% if post.immagine_profilo %}<img class="usrimg rounded-circle"
+            src="{{ url_for('static', filename= comment.immagine_profilo ) }}"
+            alt="Questa è l'immagine dell'utente {{ comment.nickname |e }}">{% endif %}</div>
+        <div>
+          <h5 class="username">{{ post.nickname |e }}</h5>
+        </div>
+        <div class="flex-grow-1 text-start px-4">
+          <p>{{ comment.testo |e }}</p>
+        </div>
+        <div class="flex-grow-1 text-end">
+          <p>{{ post.data_pubblicazione |e }}</p>
+        </div>
+      </section>
+    </div>
+    {% endfor %}
+    {% if current_user.is_authenticated %}
+    <hr class="border">
+    <form action="/comments/new" method="POST">
+      <div class="mb-3">
+        <textarea class="form-control" id="testoInput" rows="3" placeholder="Nuovo commento..." name="testo"></textarea>
+        <input type="hidden" name="id_post" value="{{ post.id }}" />
+        <div class="pt-2 text-end">
+          <button type="submit" class="btn btn-success btn-sm">Invia</button>
+        </div>
+      </div>
+    </form>
+    {% endif %}
+  </article>
+</main>
+{% endblock %}
