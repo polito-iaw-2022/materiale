@@ -22,7 +22,7 @@ Materiale per il corso _[Introduzione alle Applicazioni Web](https://github.com/
 * [Database in Python](./slide/08-database.pdf)
   * [Esempi ed esercizio](./esercizi/08-database/)
 * [Autenticazione](./slide/09-authentication.pdf)
-  * [Esercizio](./esercizi/09-authentication)
+  * [Esempio ed esercizio](./esercizi/09-authentication)
 * [Introduzione a Javascript](./slide/10-javascript-basics.pdf)
 * [JavaScript nel browser](./slide/11-javascript-browser.pdf)
   * [Esempi ed esercizio](./esercizi/11-javascript-browser/)
