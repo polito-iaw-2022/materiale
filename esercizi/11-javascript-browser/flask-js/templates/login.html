@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+  <form action="/login" method="POST">
+    <div class="mb-3">
+      <label for="email" class="form-label">e-mail</label>
+      <input type="email" class="form-control" name="email" aria-describedby="Indirizzo mail dell'utente" required>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" name="password" aria-describedby="Password dell'utente" required minlength="8">
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+{% endblock %}
