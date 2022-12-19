@@ -24,8 +24,61 @@ function ExamList() {
   }
 }
 
+function createTableRow2(exam) {
+  return `<tr>
+    <td>${exam.date.format('YYYY-MM-DD')}</td>
+    <td>${exam.name}</td>
+    <td>${exam.credits}</td>
+    <td>${exam.score}</td>
+    <td><button id="${exam.code}" class="btn btn-danger">X</button></td>
+  </tr>`;
+}
+
+function createTableRow(exam) {
+  const tr = document.createElement('tr');
+
+  const tdDate = document.createElement('td');
+  tdDate.innerText = exam.date.format('YYYY-MM-DD');
+  tr.appendChild(tdDate);
+
+  const tdName = document.createElement('td');
+  tdName.innerText = exam.name;
+  tr.appendChild(tdName);
+
+  const tdCredits = document.createElement('td');
+  tdCredits.innerText = exam.credits;
+  tr.appendChild(tdCredits);
+
+  const tdScore = document.createElement('td');
+  tdScore.innerText = exam.score;
+  tr.appendChild(tdScore);
+
+  const tdAction = document.createElement('td');
+  const button = document.createElement('button');
+  button.id = exam.code;
+  button.className = 'btn btn-danger';
+  button.innerText = 'X';
+  tdAction.append(button);
+  tr.appendChild(tdAction);
+
+  tdAction.addEventListener('click', e => {
+    tr.remove();
+    //console.log(e.target.id);
+  })
+
+  return tr;
+}
+
 function fillExamTable(exams) {
-  /* Write something clever */
+  const examTable = document.querySelector('#exam-table');
+  // const examTable = document.getElementById('exam-table');
+  for (const exam of exams) {
+    const examEl = createTableRow(exam);
+    // classic way:
+    examTable.prepend(examEl);
+    // string literal way:
+    //examTable.insertAdjacentHTML('afterbegin', examEl);
+  }
 }
 
 /* Main */
