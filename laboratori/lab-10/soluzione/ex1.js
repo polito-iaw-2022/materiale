@@ -8,13 +8,13 @@ const copia_1 = [...scores]
 const copia_2 = [...scores]
 
 // trova il voto più alto
-let min_pos = 0;
+let max_pos = 0;
 for (let i = 0; i < copia_1.length; i++) {
-    if (copia_1[i] < copia_1[min_pos])
-        min_pos = i;
+    if (copia_1[i] > copia_1[max_pos])
+        max_pos = i;
 }
 // elimina il voto più alto
-copia_1.splice(min_pos, 1)
+copia_1.splice(max_pos, 1)
 
 // trova il voto più basso
 min_pos = 0;
