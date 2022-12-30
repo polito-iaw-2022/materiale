@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block home_active %}active{% endblock %}
+
+{% block content %}
+<aside id="myaside" class="col-lg-3 col-md-12">
+  <div class="filtri-data">
+    <h5>Filtra</h5>
+    <ul class="nav nav-pills flex-column">
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-fildate="tutti">Tutti</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-fildate="oggi">Oggi</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-fildate="settimana">Questa settimana</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-fildate="mese">Questo mese</a>
+      </li>
+    </ul>
+  </div>
+  <div class="filtri-ordine">
+    <h5>Ordina</h5>
+    <ul class="nav nav-pills flex-column">
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-filordine="discendente">Più recente</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-filordine="ascendente">Meno recente</a>
+      </li>
+    </ul>
+  </div>
+</aside>
+<main class="col-lg-9 col-md-12" id="lista-posts">
+  {% for post in posts %}
+  <article class="row border p-2 mx-2 my-4" data-pubdate="{{post.data_pubblicazione}}">
+    <div class="col-lg-3 col-md-6 col-sm-12 px-0">
+      {% if post.immagine_post %}
+      <img class="w-100 p-2" src="{{ url_for('static', filename=post.immagine_post) }}" alt="...">
+      {% endif %}
+    </div>
+    <div class="col-lg-9 col-md-6 col-sm-12 content">
+      <section
+        class="d-flex align-items-center mt-2 mb-4 {{'bg-warning p-2 bg-opacity-10' if current_user.nickname == post.nickname}}">
+        <div>{% if post.immagine_profilo %}<img class="usrimg rounded-circle"
+            src="{{ url_for('static', filename= post.immagine_profilo ) }}"
+            alt="Questa è l'immagine dell'utente {{ post.nickname |e }}">{% endif %}</div>
+        <div>
+          <h4 class="username">{{ post.nickname |e }}</h4>
+        </div>
+        <div class="flex-grow-1 text-end">
+          <p>{{ post.data_pubblicazione |e }}</p>
+        </div>
+      </section>
+      <p>{{ post.testo |e }}</p>
+      <a href="{{url_for('single_post', id=post.id)}}" type="button" class="btn btn-primary btn-sm">Visualizza</a>
+    </div>
+  </article>
+  {% endfor %}
+</main>
+{% if current_user.is_authenticated %}
+<button type="button" class="mybutton" data-bs-toggle="modal" data-bs-target="#createModal">
+  +
+</button>
+<div class="modal fade" id="createModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Crea un nuovo post!</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="/posts/new" method="POST" enctype="multipart/form-data">
+        <div class="modal-body">
+          <fieldset disabled>
+            <div class="mb-3">
+              <label for="usrnameTextInput" class="form-label">Username</label>
+              <input type="text" id="usrnameTextInput" name="usrname" class="form-control"
+                value="@{{current_user.nickname}}">
+            </div>
+          </fieldset>
+          <div class="mb-3">
+            <label for="postTextarea" class="form-label">Cosa c'è di nuovo?</label>
+            <textarea class="form-control" id="postTextarea" name="testo" rows="3"
+              placeholder="Inserisci un testo per il tuo post" required minlength="30" maxlength="200"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="imageFile" class="form-label">Aggiungi un'immagine, se vuoi!</label>
+            <input class="form-control" name="immagine_post" type="file" id="imageFile">
+          </div>
+          <div class="mb-3">
+            <label for="dateTextInput" class="form-label">Seleziona una data</label>
+            <input class="form-control" type="date" name="data_pubblicazione" id="dateTextInput" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <button type="submit" class="btn btn-primary">Crea Post</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
