@@ -39,8 +39,8 @@ Materiale per il corso _[Introduzione alle Applicazioni Web](https://github.com/
 * [Laboratorio 8](./laboratori/lab-08/lab-8-database.pdf)
 * [Laboratorio 9](./laboratori/lab-09/lab-9-authentication.pdf)
 * [Laboratorio 10](./laboratori/lab-10/lab-10-javascript.pdf)
-* Laboratorio 11
-* Laboratorio 12
+* [Laboratorio 11](./laboratori/lab-11/lab-11-javascript-dom.pdf)
+* [Laboratorio 12](./laboratori/lab-12/lab-12-deploy.pdf)
 
 ## Software utilizzato
 * Python 3.10
